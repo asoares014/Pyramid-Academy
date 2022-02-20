@@ -1,17 +1,18 @@
+package com.andrea;
+
 import java.util.Random;
 import java.util.Scanner;
 
-public class GuessTheNumber {
+public class Main {
+
     public static void main(String[] args) {
+        GuessNumber number = new GuessNumber();
         Scanner input = new Scanner(System.in);
         Random rand = new Random();
         int randomNumber = rand.nextInt(100) + 1;
         //System.out.println(randomNumber);
 
-        System.out.println("Hello! What is your name?");
-        String name = input.nextLine();
-        System.out.println("Well, " + name + " , I am thinking of a number between 1 and 100.");
-        System.out.println("Enter your guess:");
+        number.intro();
         int counter = 0;
 
         while (true) {
@@ -20,13 +21,13 @@ public class GuessTheNumber {
                 counter++;
 
                 if (playerGuess == randomNumber) {
-                    System.out.println("Correct! You Win!");
+                    System.out.println(number.correct());
                     System.out.println("You guessed my number in " + counter + " tries!");
                     break;
                 } else if (randomNumber > playerGuess) {
-                    System.out.println("Your guess is too low! Guess again");
+                    System.out.println(number.tooLow());
                 } else {
-                    System.out.println("Your guess is too high! Guess again");
+                    System.out.println(number.tooHigh());
                 }
             } catch (Exception e) {
                 System.out.println(e.getMessage());
@@ -36,4 +37,3 @@ public class GuessTheNumber {
         }
     }
 }
-
