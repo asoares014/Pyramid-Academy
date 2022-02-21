@@ -10,9 +10,9 @@ public class Main {
         Scanner input = new Scanner(System.in);
         Random rand = new Random();
         int randomNumber = rand.nextInt(100) + 1;
-        //System.out.println(randomNumber);
+       // System.out.println(randomNumber);
 
-        number.intro();
+        System.out.println(number.intro());
         int counter = 0;
 
         while (true) {
