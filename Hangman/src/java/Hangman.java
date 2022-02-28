@@ -3,12 +3,13 @@ import java.util.Scanner;
 
 public class Hangman {
 
-    public static boolean printWordState(String word, List<Character> playerGuesses){
+    public static boolean printWordState(String word, List<Character> playerGuesses) {
         int correctCount = 0;
         for (int i = 0; i < word.length(); i++) {
-            if(playerGuesses.contains(word.charAt(i))) {
+            if (playerGuesses.contains(word.charAt(i))) {
                 System.out.print(word.charAt(i));
                 correctCount++;
+
             } else {
                 System.out.print("-");
             }
@@ -25,7 +26,7 @@ public class Hangman {
         return word.contains(letterGuess);
     }
 
-    public static void printHangedMan(Integer wrongCount){
+    public static void printHangedMan(Integer wrongCount) {
         System.out.println(" -------");
         System.out.println(" |     |");
         if (wrongCount >= 1) {
